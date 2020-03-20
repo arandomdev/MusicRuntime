@@ -8,6 +8,30 @@ try:
 		print("MQVSong already defined")
 except NameError:
 	class MQVSong(objc.NSObject):
+		"""
+		A wrapper around MPMediaItem.
+
+		Since this is a ObjCClass, it should be initialized like so, MQVSong.alloc().initWithSong(songObject)
+
+		Attributes
+		----------
+
+		title : str
+
+		artist : str
+
+		exists : bool
+			If the song exists in the users library
+
+		art : rubicon.objc.ObjCInstance
+			A UIImage instance of the song's artwork
+
+		parameters
+		----------
+
+		songObject : rubicon.objc.ObjCInstance
+			A MPMediaItem instance.
+		"""
 
 		@objc.objc_method
 		def initWithSong_(self, songObject):
