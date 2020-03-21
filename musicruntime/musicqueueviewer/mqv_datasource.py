@@ -76,7 +76,7 @@ except NameError:
 		def reloadTable(self):
 			self.tableView.reloadData()
 
-			if self.tableView.numberOfRowsInSection(0) is not 0:
+			if self.tableView.numberOfRowsInSection(0) != 0:
 				indexZero = objc.ObjCClass("NSIndexPath").indexPathForRow(0, inSection=0)
 				self.tableView.scrollToRowAtIndexPath(indexZero, atScrollPosition=1, animated=True)
 				pass
